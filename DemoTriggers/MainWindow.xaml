@@ -8,28 +8,56 @@
         Title="Demo tipos de Triggers" Height="450" Width="800">
     <Window.Resources>
         <Style TargetType="Image">
+
+            <!-- Prueba: 1 -->
             <Setter Property="Opacity" Value="0.5"/>
+            
             <Style.Triggers>
-                <!-- Cuando una propiedad de mi elemento se sumple --><!-- 
+            
+                <!-- Cuando una propiedad de mi elemento se sumple --> 
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Opacity" Value="1"/>
-                </Trigger>-->
+                </Trigger>
                 
-                <!-- Si queremos supervisar la propiedad de otro elemento o clase. -->
+                 <!-- Si queremos supervisar la propiedad de otro elemento o clase. -->
                 <!--<DataTrigger Binding="{Binding ElementName=mostrarCheckBox, Path=IsChecked}" Value="True">
                     <Setter Property="Opacity" Value="1"/>
                 </DataTrigger>-->
 
                 <!-- Animación funciona pulsando sobre cada imagen. -->
-                <EventTrigger RoutedEvent="MouseLeftButtonDown" >
+                <!--<EventTrigger RoutedEvent="MouseLeftButtonDown" >
                     <BeginStoryboard>
                         <Storyboard>
                             <DoubleAnimation Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:4"/>
                         </Storyboard>
                     </BeginStoryboard>
-                </EventTrigger>
+                </EventTrigger>-->
 
             </Style.Triggers>
+
+            <!-- Prueba: 2 -->
+            <!--<Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
+            <Setter Property="RenderTransform">
+                <Setter.Value>
+                    <RotateTransform CenterX="0" CenterY="0"/>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="MouseLeftButtonDown" >
+                    <BeginStoryboard Name="RotateOnHover">
+                        <Storyboard RepeatBehavior="Forever">
+                            <DoubleAnimation
+                                Storyboard.TargetProperty="(UIElement.RenderTransform).(RotateTransform.Angle)"
+                                From="0" To="360"
+                                Duration="0:0:2"
+                                AutoReverse="False" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseRightButtonDown" >
+                    <StopStoryboard BeginStoryboardName="RotateOnHover"/>
+                </EventTrigger>
+            </Style.Triggers>-->
         </Style>
 
     </Window.Resources>
@@ -49,6 +77,6 @@
                 Width="200" Margin="5"/>
         </StackPanel>
 
-        <!--<CheckBox x:Name="mostrarCheckBox" Margin="5" Content="Mostrar" HorizontalAlignment="Center" />-->
+       <!--<CheckBox x:Na me="mostrarCheckBox" Margin="5" Content="Mostrar" HorizontalAlignment="Center" />-->
     </StackPanel>
 </Window>
